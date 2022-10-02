@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% block title %}Url was shortened successfully{% endblock %}
+{% block content %}
+<div class="card" style="margin: 30px 30px 30px;">
+    <div class="card-body">
+        <h1>Url was shortened successfully</h1><br>
+        <h1>shortened url is: <a href="{{ shortened_url }}">{{ shortened_url }}</a></h1>
+    </div>
+</div>
+{% endblock %}

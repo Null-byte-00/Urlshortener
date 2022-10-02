@@ -1,0 +1,29 @@
+{% extends 'base/base.html' %}
+{% block title %}Create your shortened url{% endblock %}
+{% block content %}
+<div class="card" style="width: 90%; border-radius: 30px; margin: 50px 100px 100px;;">
+    <div class="card-body">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Target url</label>
+                <input type="text" class="form-control" name="target_url" placeholder="https://example.com/">
+                <div id="emailHelp" class="form-text">The url you want to shorten</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">The name of your url</label>
+                <input type="text" class="form-control" name="slug" placeholder="http://{{ domain }}/url/<Url Name>">
+            </div>
+            <button type="submit" class="btn btn-primary">Create url</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+<!--input type="text" name="target_url" placeholder="Target url"-->
+    <!--input type="text" name="slug" placeholder="Slug"-->
+
+{% endblock %}
